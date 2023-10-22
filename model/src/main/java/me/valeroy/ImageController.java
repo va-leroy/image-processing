@@ -72,9 +72,8 @@ public class ImageController {
 
         String contentType = file.getContentType();
         assert contentType != null;
-        if (!contentType.equals(MediaType.IMAGE_JPEG.toString()) && !contentType.equals(MediaType.IMAGE_PNG.toString())) {
+        if (!contentType.equals(MediaType.IMAGE_JPEG.toString()) && !contentType.equals(MediaType.IMAGE_PNG.toString()))
             return new ResponseEntity<>("Only JPEG and PNG file formats supported.", HttpStatus.UNSUPPORTED_MEDIA_TYPE);
-        }
 
         try {
             _imageDao.create(new Image(file.getOriginalFilename(), file.getBytes()));
@@ -105,7 +104,6 @@ public class ImageController {
         Optional<Image> image = _imageDao.retrieve(id);
         if (image.isEmpty())
             return new ResponseEntity<>("Image ID(" + id + ") not found.", HttpStatus.NOT_FOUND);
-
 
         InputStream in = new ByteArrayInputStream(image.get().getData());
         BufferedImage input;

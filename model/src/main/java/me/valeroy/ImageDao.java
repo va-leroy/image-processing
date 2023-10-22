@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Repository
 public class ImageDao implements Dao<Image> {
-    private final Map<Long, Image> images = new HashMap<>();
+    private final Map<Long, Image> _images = new HashMap<>();
 
     public ImageDao() {
         byte[] fileContent;
@@ -25,7 +25,7 @@ public class ImageDao implements Dao<Image> {
                 String[] filename = p.toString().split("/"); // Splits the absolute path
                 Image img = new Image(filename[filename.length - 1].trim(), fileContent);
 
-                images.put(img.getID(), img);
+                _images.put(img.getID(), img);
             } catch (final IOException e) {
                 e.printStackTrace();
             }
@@ -34,29 +34,29 @@ public class ImageDao implements Dao<Image> {
 
     @Override
     public Optional<Image> retrieve(final long id) {
-        return Optional.ofNullable(images.get(id));
+        return Optional.ofNullable(_images.get(id));
     }
 
     @Override
     public List<Image> retrieveAll() {
-        return new ArrayList<>(images.values());
+        return new ArrayList<>(_images.values());
     }
 
     @Override
     public void create(final Image img) {
-        images.put(img.getID(), img);
+        _images.put(img.getID(), img);
     }
 
     @Override
     public void update(final Image img, final String[] params) {
         img.setName(Objects.requireNonNull(params[0], "Name cannot be null"));
 
-        images.put(img.getID(), img);
+        _images.put(img.getID(), img);
     }
 
     @Override
     public void delete(final Image img) {
-        images.remove(img.getID());
+        _images.remove(img.getID());
     }
 
     public List<Path> getAllImagesInDirectory() {
