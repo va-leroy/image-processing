@@ -26,14 +26,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class ImageController {
+public class SpaController {
     @Autowired
     private ObjectMapper _mapper;
 
     private final ImageDao _imageDao;
 
     @Autowired
-    public ImageController(ImageDao imageDao) {
+    public SpaController(ImageDao imageDao) {
         this._imageDao = imageDao;
     }
 
@@ -98,6 +98,12 @@ public class ImageController {
         }
         return nodes;
     }
+
+    @RequestMapping(value = "/images", method = RequestMethod.DELETE)
+    public ResponseEntity<?> deleteImages() {
+        return new ResponseEntity<>("Method not allowed.", HttpStatus.METHOD_NOT_ALLOWED);
+    }
+
 
     @RequestMapping(value = "/images/{id}/{alg}/{param}", method = RequestMethod.GET, produces = MediaType.IMAGE_JPEG_VALUE)
     public ResponseEntity<?> getImageFromAlgorithms(@PathVariable("id") long id, @PathVariable("alg") String alg, @PathVariable("param") int param) {

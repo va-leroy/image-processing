@@ -5,7 +5,7 @@ import boofcv.struct.image.Planar;
 
 public class MeanConvolution {
     public static void compute(Planar<GrayU8> input, Planar<GrayU8> output, int size) {
-        size = Math.max(size, 0);
+        size = Math.max(size, 1);
         size = Math.min(size, Math.min(input.height, input.width));
         size = (size % 2 == 0) ? size + 1 : size;
 

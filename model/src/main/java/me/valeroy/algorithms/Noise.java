@@ -5,7 +5,7 @@ import boofcv.struct.image.Planar;
 
 public class Noise {
     public static void compute(Planar<GrayU8> input, Planar<GrayU8> output, int delta) {
-        if (delta < 0) delta = 0;
+        delta = Math.min(Math.max(delta, 0), 255);
         for (int y = 0; y < input.height; ++y) {
             for (int x = 0; x < input.width; ++x) {
                 int red = input.getBand(0).get(x, y);

@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder(OrderAnnotation.class)
-public class ImageControllerTests {
+public class SpaControllerTests {
 
     @Autowired
     private MockMvc _mockMvc;
