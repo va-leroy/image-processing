@@ -18,9 +18,9 @@ Powered by the **Java Spring Boot** framework, with its embedded **Apache Tomcat
 
 ## 🌱 Overview
 
-This project is an extension from an assignment dealing about image processing algorithms as part of the BSc 3 Computer Science course at the University of Bordeaux.
+This project is an extension from an assignment dealing about image processing algorithms as part of the BSc 3 Computer Science major at the University of Bordeaux.
 
-This project implements the following algorithms: Brightness correction, Contrast correction, Gamma correction, Histogram equalization, Mean convolution, Gaussian convolution, Noise and Grain filters, Negative filter, Vignette filter, Grayscale filter, Horizontal flip, and Sobel edge detection.
+Some of the algorithms featured in this project include: Brightness correction, Contrast correction, Gamma correction, Histogram equalization, Mean convolution, Gaussian convolution, Noise and Grain filters, Negative filter, Vignette filter, Grayscale filter, Horizontal flip, and Sobel edge detection.
 
 ## 🏃🏽 Running the project
 
