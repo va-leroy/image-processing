@@ -31,6 +31,16 @@ Before running the project, make sure you have the necessary dependencies instal
 ```sh
 cd view
 npm i
+npm audit fix # Don't use npm update
+```
+
+### Running the client only
+
+To run the client only, simply run the following command:
+
+```sh
+cd view
+npm run dev
 ```
 
 ### Compiling the project
