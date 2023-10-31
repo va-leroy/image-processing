@@ -22,6 +22,10 @@ This project is an extension from an assignment dealing about image processing a
 
 Some of the algorithms featured in this project include: Brightness correction, Contrast correction, Gamma correction, Histogram equalization, Mean convolution, Gaussian convolution, Noise and Grain filters, Negative filter, Vignette filter, Grayscale filter, Horizontal flip, and Sobel edge detection.
 
+<div align="center">
+<img src="view/assets/example.gif" width="500" style="border-radius: 0.5em;"/>
+</div>
+
 ## 🏃🏽 Running the project
 
 ### Before anything else
@@ -30,9 +34,10 @@ Before running the project, make sure you have the necessary dependencies instal
 
 ```sh
 cd view
-npm i
-npm audit fix # Don't use npm update
+npm i # or npm install
 ```
+
+That's it, no need for an atrocious `npm audit fix` or anything like that.
 
 ### Running the client only
 
